@@ -1,0 +1,20 @@
+.user-container {
+  display: flex;
+  justify-content: center;   /* horizontal center */
+  align-items: center;       /* vertical center */
+
+  height: calc(100vh - 70px); /* subtract header height */
+}
+
+.user-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.content {
+  height: calc(100vh - 70px);
+  display: flex;
+}

@@ -1,0 +1,67 @@
+/* Sidebar container */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background: #1f2a38;
+  color: white;
+  transition: 0.3s ease;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+/* When open */
+.sidebar.open {
+  left: 0;
+}
+
+/* Header */
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #3b4f68;
+}
+
+.sidebar-header span {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar-header button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* Menu list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Menu item */
+li {
+  padding: 14px 20px;
+  cursor: pointer;
+  font-size: 15px;
+  border-bottom: 1px solid #2e3d50;
+  transition: background 0.2s;
+}
+
+/* Hover */
+li:hover {
+  background: #3b4f68;
+}
+
+/* Active feel (optional) */
+li:active {
+  background: #4a6385;
+}

@@ -1,0 +1,27 @@
+.container {
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.chart-card {
+  background: white;
+  padding: 15px;
+  border-radius: 12px;
+  text-align: center;
+}
+.chart-card:hover {
+  transform: scale(1.03);
+  transition: 0.3s ease;
+}
+.chart-card {
+  transition: all 0.3s ease;
+}
+.chart-card h4 {
+  margin-bottom: 10px;
+  font-weight: 600;
+}

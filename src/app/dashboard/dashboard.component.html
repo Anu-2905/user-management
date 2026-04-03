@@ -1,0 +1,29 @@
+<div class="app-container">
+
+  <!-- Sidebar -->
+  <app-sidebar
+    [isOpen]="isSidebarOpen"
+    (close)="toggleSidebar()">
+  </app-sidebar>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+
+    <!-- Left -->
+    <div class="left">
+      <button class="menu-btn" (click)="toggleSidebar()">☰</button>
+    </div>
+
+    <!-- Right -->
+    <div class="right">
+  <span class="username">👤 {{ username }}</span>
+  <button class="logout-btn" (click)="goToLogout()">Logout</button>
+</div>
+  </div>
+
+  <!-- Content -->
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
+
+</div>

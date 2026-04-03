@@ -1,0 +1,86 @@
+<div class="container">
+
+  <h2>Graphs Dashboard</h2>
+
+  <!-- FILTER -->
+  <div class="filter">
+    <label>Select Month:</label>
+    <select [(ngModel)]="selectedMonth" (change)="updateCharts()">
+      <option>Jan</option>
+      <option>Feb</option>
+      <option>Mar</option>
+    </select>
+  </div>
+
+  <div class="grid">
+
+    @if (showBar) {
+      <div class="chart-card">
+        <h4>Sales per Week</h4>
+        <canvas baseChart 
+          [data]="barChartData" 
+          [options]="chartOptions" 
+          [type]="'bar'">
+        </canvas>
+      </div>
+    }
+
+    @if (showLine) {
+      <div class="chart-card">
+        <h4>User Growth</h4>
+        <canvas baseChart 
+          [data]="lineChartData" 
+          [options]="chartOptions" 
+          [type]="'line'">
+        </canvas>
+      </div>
+    }
+
+    @if (showPie) {
+  <div class="chart-card">
+    <h4>Category Distribution</h4>
+    <canvas baseChart 
+      [data]="pieChartData" 
+      [options]="chartOptions" 
+      [plugins]="chartPlugins"   
+      [type]="'pie'">
+    </canvas>
+  </div>
+}
+    @if (showDoughnut) {
+  <div class="chart-card">
+    <h4>Product Distribution</h4>
+    <canvas baseChart 
+      [data]="doughnutChartData" 
+      [options]="chartOptions" 
+      [plugins]="chartPlugins"   
+      [type]="'doughnut'">
+    </canvas>
+  </div>
+}
+
+    @if (showScatter) {
+      <div class="chart-card">
+        <h4>Scatter Analysis</h4>
+        <canvas baseChart 
+          [data]="scatterChartData" 
+          [options]="chartOptions" 
+          [type]="'scatter'">
+        </canvas>
+      </div>
+    }
+
+    @if (showBubble) {
+      <div class="chart-card">
+        <h4>Bubble Analysis</h4>
+        <canvas baseChart 
+          [data]="bubbleChartData" 
+          [options]="chartOptions" 
+          [type]="'bubble'">
+        </canvas>
+      </div>
+    }
+
+  </div>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="login-container">
+  <h2>Login</h2>
+
+  <form [formGroup]="loginForm" (ngSubmit)="login()">
+
+    <label>Email</label>
+    <input type="email" formControlName="email">
+    <div class="error"
+         *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.['required']">
+      Email is required
+    </div>
+    <div class="error"
+         *ngIf="loginForm.controls.email.errors?.['email']">
+      Enter valid email
+    </div>
+
+    <label>Password</label>
+    <input type="password" formControlName="password">
+    <div class="error"
+         *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.['required']">
+      Password is required
+    </div>
+    <div class="error"
+         *ngIf="loginForm.controls.password.errors?.['pattern']">
+      Password must include uppercase, lowercase, number, and special char
+    </div>
+
+    <div class="error" *ngIf="loginError">
+      Invalid email or password
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Login</button>
+    <p>Don't have an account? <a routerLink="/signup">Create Account</a></p>
+  </form>
+</div>

@@ -1,0 +1,66 @@
+<div class="signup-container">
+  <h2>Create Account</h2>
+
+  <form [formGroup]="signupForm" (ngSubmit)="signup()">
+
+    <label>First Name</label>
+    <input type="text" formControlName="fname">
+    <div class="error"
+         *ngIf="signupForm.controls.fname.touched && signupForm.controls.fname.errors?.['required']">
+      First name is required
+    </div>
+    <div class="error"
+         *ngIf="signupForm.controls.fname.errors?.['pattern']">
+      Only letters allowed
+    </div>
+
+    <label>Last Name</label>
+    <input type="text" formControlName="lname">
+    <div class="error"
+         *ngIf="signupForm.controls.lname.touched && signupForm.controls.lname.errors?.['required']">
+      Last name is required
+    </div>
+    <div class="error"
+         *ngIf="signupForm.controls.lname.errors?.['pattern']">
+      Only letters allowed
+    </div>
+
+    <label>Email</label>
+    <input type="email" formControlName="email">
+    <div class="error"
+         *ngIf="signupForm.controls.email.touched && signupForm.controls.email.errors?.['required']">
+      Email is required
+    </div>
+    <div class="error"
+         *ngIf="signupForm.controls.email.errors?.['email']">
+      Enter valid email
+    </div>
+    <div class="error" *ngIf="emailExists">
+      This email is already registered
+    </div>
+
+    <label>Password</label>
+    <input type="password" formControlName="password">
+    <div class="error"
+         *ngIf="signupForm.controls.password.touched && signupForm.controls.password.errors?.['required']">
+      Password is required
+    </div>
+    <div class="error"
+         *ngIf="signupForm.controls.password.errors?.['pattern']">
+      Password must include uppercase, lowercase, number, and special char
+    </div>
+
+    <label>Confirm Password</label>
+    <input type="password" formControlName="confirmPassword">
+    <div class="error"
+         *ngIf="signupForm.controls.confirmPassword.touched && signupForm.controls.confirmPassword.invalid">
+      Confirm password required
+    </div>
+
+    <button type="submit" [disabled]="signupForm.invalid">
+      Create Account
+    </button>
+
+    <p>Already have an account? <a routerLink="/login">Login</a></p>
+  </form>
+</div>
