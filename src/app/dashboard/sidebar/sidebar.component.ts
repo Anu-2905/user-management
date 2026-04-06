@@ -19,7 +19,7 @@ export class SidebarComponent {
   constructor(private router: Router) {}
 
   goToUser() {
-    this.activeItem = 'user';
+    this.activeItem = 'users';
     this.router.navigate(['/dashboard/user']);
     this.close.emit();
   }
@@ -35,5 +35,10 @@ export class SidebarComponent {
     this.router.navigate(['/dashboard/graphs']);
     this.close.emit();
   }
+  goToSettings() {
+  this.activeItem = 'settings';
+  this.router.navigate(['/dashboard/settings']);
+  this.close.emit();
+}
 }
 
