@@ -47,6 +47,12 @@ export const routes: Routes = [
         loadComponent: () =>
           import('./dashboard/Menu/graphs/graphs.component')
             .then(m => m.GraphsComponent)
+      },
+      {
+        path: 'settings',
+        loadComponent: () =>
+            import('./dashboard/Menu/settings/settings.component')
+                 .then(m => m.SettingsComponent)
       }
     ]
   }
